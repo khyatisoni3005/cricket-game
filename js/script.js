@@ -5,6 +5,7 @@ let australiaBalls = 0;
 let indiawicket = 0;
 let australiawicket = 0;
 let battingTeam = "";
+const totalBalls = 30;
 
 
 function play(team) {
@@ -44,7 +45,7 @@ function play(team) {
         setTimeout(() => {
             what.innerHTML = outcome == "wicket" ? "WICKET!" : `${outcome} RUNS!`;
             what.classList.add('animate__animated', 'animate__fadeIn'); // add Animate.css classes for the fade-in animation
-        }, 10); // short delay to ensure classes are removed before re-adding
+        }, 20); // short delay to ensure classes are removed before re-adding
     }
 
     changeBattting();
@@ -55,19 +56,19 @@ function play(team) {
 
 }
 function need() {
-    if (battingTeam == "INDIA" && australiaBalls >= 10) {
+    if (battingTeam == "INDIA" && australiaBalls >= totalBalls) {
         let runsNeeded = australiaRun - indiaRun + 1;
-        let ballsNeeded = 10 - indiaBalls;
+        let ballsNeeded = totalBalls - indiaBalls;
         document.getElementById("need-ind").innerHTML = ` need ${runsNeeded} runs in ${ballsNeeded} balls`;
 
     }
-    else if (battingTeam == "AUSTRALIA" && indiaBalls >= 10) {
+    else if (battingTeam == "AUSTRALIA" && indiaBalls >= totalBalls) {
         let neededRuns = indiaRun - australiaRun + 1;
-        let neededBall = 10 - australiaBalls;
+        let neededBall = totalBalls - australiaBalls;
         document.getElementById("need-aus").innerHTML = ` need ${neededRuns} runs in ${neededBall} balls`;
 
     }
-    if (indiaBalls >= 10 && australiaBalls >= 10) {
+    if (indiaBalls >= totalBalls && australiaBalls >= totalBalls) {
         document.getElementById("need-ind").innerHTML = "";
         document.getElementById("need-aus").innerHTML = ""
 
@@ -100,7 +101,7 @@ function updateScoreCard() {
 
 }
 function result() {
-    if (indiaBalls >= 10 && australiaBalls >= 10) {
+    if (indiaBalls >= totalBalls && australiaBalls >= totalBalls) {
         if (indiaRun > australiaRun) {
             document.getElementById("h1").innerHTML = "WINNER IS INDIA"
             document.getElementById("img").src = "image/trofi-removebg-preview.png"
@@ -137,10 +138,10 @@ function toss() {
     return winnerTeam;
 }
 function changeBattting() {
-    if (battingTeam == "INDIA" && indiaBalls >= 10) {
+    if (battingTeam == "INDIA" && indiaBalls >= totalBalls) {
         battingTeam = "AUSTRALIA"
     }
-    else if (battingTeam == "AUSTRALIA" && australiaBalls >= 10) {
+    else if (battingTeam == "AUSTRALIA" && australiaBalls >= totalBalls) {
         battingTeam = "INDIA"
     };
     if (battingTeam === "INDIA") {
@@ -152,7 +153,7 @@ function changeBattting() {
         document.getElementById('indiaImg').style.filter = "brightness(30%)";
         document.getElementById('australiaImg').style.filter = "brightness(100%)";
     }
-    if (indiaBalls >= 10 && australiaBalls >= 10) {
+    if (indiaBalls >= totalBalls && australiaBalls >= totalBalls) {
         document.getElementById('australiaImg').style.filter = "brightness(30%)";
         document.getElementById('indiaImg').style.filter = "brightness(30%)";
         battingTeam = ""
