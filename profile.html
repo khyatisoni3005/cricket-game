@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORLD CUP</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="shortcut icon" href="image/icons8-trophy-48.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<style>
+    .rotate-on-hover {
+        transition: transform 0.5s;
+        /* smooth transition effect */
+    }
+
+    .gradient-box {
+        width: 400px;
+        /* adjust to your desired width */
+        height: 100px;
+        /* adjust to your desired height */
+        background: linear-gradient(to right, black, transparent);
+    }
+
+
+    h6 {
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .rotate-on-hover:hover {
+        transform: rotateY(50deg);
+        /* rotate 180 degrees on hover */
+    }
+
+    /* body {
+        background-image: url(image/wp10993481.jpg);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh; */
+
+
+    #h1 {
+        text-align: center;
+        color: rgb(87, 4, 4);
+        text-transform: uppercase;
+        margin-top: 20px;
+        font-size: 50px;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fade-in {
+        animation-name: fadeIn;
+        animation-duration: 2s;
+    }
+
+    #img {}
+</style>
+
+<body>
+    <div class="cricket" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row ms-5">
+                <div class="col-3"></div>
+                <div class="col-2">
+                    <div class="image">
+                        <div onclick="play('INDIA')" class="btn btn-primary ms-4 ps-2 pe-2">play</div>
+                        <br><br><br>
+                        <img src="image/istockphoto-472317739-612x612.jpg"
+                            style="width: 100px; height: 100px;  border-radius: 50%;" alt="">
+                        <h1 class="mt-2">INDIA</h1>
+                        <h3><span id="india-run">0</span> / <span id="india-wicket">0</span></h3>
+                        <p>(<span id="india-overs">0</span> overs)</p>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <div class="image">
+                        <div onclick="play('AUSTRALIA')" class="btn btn-success ms-4 ps-2 pe-2">play</div>
+                        <br><br><br>
+                        <img src="image/Flag-Australia.webp" style="width: 100px; height: 100px; border-radius: 50%;"
+                            alt="">
+                        <h1 class="mt-2">AUSTRALIA</h1>
+                        <h3><span id="australia-run">0</span> / <span id="aus-wicket">0</span></h3>
+                        <p>(<span id="australia-overs">0</span> overs)</p>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
