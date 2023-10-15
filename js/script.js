@@ -9,6 +9,7 @@ const totalBalls = 30;
 
 
 function play(team) {
+    document.getElementById("h2").innerHTML = ``;
     document.getElementById("what").innerHTML = "";
     if (team !== battingTeam) {
         return;
